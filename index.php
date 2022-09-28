@@ -60,7 +60,6 @@ $competitions = [
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"><?= $competition['name'] ?></h5>
-                            <p class="card-text"><?= $competition['description'] ?></p>
                             <a href="show.php?id=<?= $competition['id'] ?>" class="btn btn-primary">Voir la compétition</a>
                         </div>
                     </div>
