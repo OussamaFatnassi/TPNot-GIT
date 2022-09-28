@@ -1,4 +1,5 @@
 <?php
+//page to show all partecipants and their competitions
 $competitions = $competitions = [
     [
         'id' => 1,
@@ -127,7 +128,6 @@ $partecipants = [
         'competition_id' => 5,
     ],
 ];
-$id = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -140,36 +140,43 @@ $id = $_GET['id'];
 </head>
 <body>
     <div class="container">
+        <h1 class="text-center">Liste des participants</h1>
         <div class="row">
             <div class="col-12">
-                <h1>Association Des Sports</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div>Compétition : <?= $competitions[$id-1]['name'] ?></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div>Champion : <?= $competitions[$id-1]['winner'] ?></div>
-            </div>
-        <div class="row">
-            <div class="col-12">
-                <h2>Participants</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <ul>
-                    <?php foreach ($partecipants as $partecipant) : ?>
-                        <?php if ($partecipant['competition_id'] == $id) : ?>
-                            <li>
-                                <?= $partecipant['name'] ?>
-                            </li>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                </ul>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Ville</th>
+                            <th scope="col">Compétition</th>
+                            <th scope="col">Gagnant</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($partecipants as $partecipant): ?>
+                            <tr>
+                                <td><?= $partecipant['name'] ?></td>
+                                <td><?= $partecipant['age'] ?></td>
+                                <td><?= $partecipant['ville'] ?></td>
+                                <td>
+                                    <?php foreach($competitions as $competition): ?>
+                                        <?php if($competition['id'] === $partecipant['competition_id']): ?>
+                                            <?= $competition['name'] ?>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </td>
+                                <td>
+                                    <?php foreach($competitions as $competition): ?>
+                                        <?php if($competition['winner'] === $partecipant['name']): ?>
+                                            Champion
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

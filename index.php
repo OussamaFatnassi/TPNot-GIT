@@ -1,12 +1,13 @@
 <?php
 //list of fake competitions
-$competitions = [
+$competitions = $competitions = [
     [
         'id' => 1,
         'name' => 'Marathon de Paris',
         'date' => '2021-01-01',
         'location' => 'Paris',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+        'winner' => 'John Doe',
     ],
     [
         'id' => 2,
@@ -14,6 +15,7 @@ $competitions = [
         'date' => '2021-01-02',
         'location' => 'Lyon',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+        'winner' => 'Jane Doe',
     ],
     [
         'id' => 3,
@@ -21,6 +23,7 @@ $competitions = [
         'date' => '2021-01-03',
         'location' => 'Marseille',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+        'winner' => 'Poe Doe',
     ],
     [
         'id' => 4,
@@ -28,6 +31,7 @@ $competitions = [
         'date' => '2021-01-04',
         'location' => 'Bordeaux',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+        'winner' => 'John Doe',
     ],
     [
         'id' => 5,
@@ -35,6 +39,7 @@ $competitions = [
         'date' => '2021-01-05',
         'location' => 'Lille',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+        'winner' => 'Jane Doe',
     ]
 ];
 ?>
@@ -66,9 +71,11 @@ $competitions = [
                 </div>
             <?php endforeach; ?>
         </div>
-        <div class="row">
+        <div class="col">
             <div class="col-12">
                 <a href="facture.php" class="btn btn-primary">Paiement Factures</a>
+                <a href="listePartecipants.php" class="btn btn-primary">Liste des participants</a>
             </div>
+        </div>
 </body>
 </html>
