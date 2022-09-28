@@ -66,5 +66,9 @@ $competitions = [
                 </div>
             <?php endforeach; ?>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <a href="facture.php" class="btn btn-primary">Paiement Factures</a>
+            </div>
 </body>
 </html>
